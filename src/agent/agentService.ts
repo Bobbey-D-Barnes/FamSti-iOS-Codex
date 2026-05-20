@@ -160,7 +160,7 @@ Du MUSST als valides JSON antworten:
 }
 
 Erlaubte Operationen:
-- NAVIGATE { "route": "/planer|/termine|/schueler|/erinnerungen|/pruefungen|/cockpit|/finanzen|/fahrzeug|/analytik|/behoerden|/marketing|/compliance|/einstellungen|/" }
+- NAVIGATE { "route": "/planer|/termine|/schueler|/erinnerungen|/pruefungen|/cockpit|/finanzen|/fahrzeug|/analytik|/behoerden|/marketing|/compliance|/einstellungen|/suche|/" }
 - SAVE_STUDENT { Student-Felder }
 - SAVE_SESSION { id, student_id, student_name, date, start_time, end_time, duration_minutes, type, zone, stage_day, notes, confirmed }
 - SAVE_SESSIONS_BATCH { sessions: [Session-Felder], schedule_followups: true }

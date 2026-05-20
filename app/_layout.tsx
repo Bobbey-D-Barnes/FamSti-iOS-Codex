@@ -89,6 +89,13 @@ function RootStack() {
           }}
         />
         <Stack.Screen
+          name="suche"
+          options={{
+            presentation: 'card',
+            animation: 'slide_from_right',
+          }}
+        />
+        <Stack.Screen
           name="einstellungen/provider"
           options={{ animation: 'slide_from_right' }}
         />

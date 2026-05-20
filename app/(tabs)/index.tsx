@@ -59,6 +59,7 @@ const SHORTCUT_CONFIG: Record<
   students: { icon: <Users size={24} color="#4F8AE6" />, label: 'Schüler', bgLight: '#EFF6FF', bgDark: 'rgba(79,138,230,0.1)', path: '/schueler' },
   exams: { icon: <GraduationCap size={24} color="#F59E0B" />, label: 'Prüfung', bgLight: '#FFF7ED', bgDark: 'rgba(245,158,11,0.1)', path: '/pruefungen' },
   reminders: { icon: <Bell size={24} color="#F97316" />, label: 'Alerts', bgLight: '#FFF7ED', bgDark: 'rgba(249,115,22,0.1)', path: '/erinnerungen' },
+  search: { icon: <Search size={24} color="#6C5CE7" />, label: 'Suche', bgLight: '#F5F3FF', bgDark: 'rgba(108,92,231,0.1)', path: '/suche' },
   stats: { icon: <BarChart3 size={24} color="#EC4899" />, label: 'Stats', bgLight: '#FDF2F8', bgDark: 'rgba(236,72,153,0.1)', path: '/pruefungen' },
   scan: { icon: <Search size={24} color="#F97316" />, label: 'Scan', bgLight: '#FFF7ED', bgDark: 'rgba(249,115,22,0.1)', path: '/schueler' },
   map: { icon: <Map size={24} color="#14B8A6" />, label: 'Karte', bgLight: '#ECFEFF', bgDark: 'rgba(20,184,166,0.1)', path: '/planer' },
@@ -230,9 +231,17 @@ export default function DashboardScreen() {
             <Text style={{ fontSize: 12, fontWeight: '500', color: '#6E6A85', textTransform: 'uppercase', letterSpacing: 1, marginBottom: 4 }}>
               {currentDateString}
             </Text>
-            <Text style={{ fontSize: 32, fontWeight: '800', color: isDark ? '#F0EEF6' : '#1A1625' }}>
-              {getGreeting()}.
-            </Text>
+            <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 12 }}>
+              <Text style={{ flex: 1, fontSize: 32, fontWeight: '800', color: isDark ? '#F0EEF6' : '#1A1625' }}>
+                {getGreeting()}.
+              </Text>
+              <TouchableOpacity
+                onPress={() => router.push('/suche' as any)}
+                style={{ width: 46, height: 46, borderRadius: 16, alignItems: 'center', justifyContent: 'center', backgroundColor: isDark ? 'rgba(255,255,255,0.06)' : '#FFFFFF' }}
+              >
+                <Search size={21} color="#6C5CE7" />
+              </TouchableOpacity>
+            </View>
           </View>
         )}
 

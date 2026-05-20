@@ -12,6 +12,7 @@ const SCREEN_LABELS: Record<string, string> = {
   '/erinnerungen': 'Erinnerungen',
   '/pruefungen': 'Prüfungen',
   '/cockpit': 'Cockpit',
+  '/suche': 'Suche',
   '/finanzen': 'Finanzen',
   '/fahrzeug': 'Fahrzeug',
   '/analytik': 'Analytik',

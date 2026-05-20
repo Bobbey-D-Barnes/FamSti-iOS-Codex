@@ -5,7 +5,7 @@ import { useRouter } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useQueryClient } from '@tanstack/react-query';
 import * as Haptics from 'expo-haptics';
-import { Banknote, Car, LineChart, ShieldAlert, Target, Briefcase, ChevronRight, ShieldCheck } from 'lucide-react-native';
+import { Banknote, Car, LineChart, ShieldAlert, Target, Briefcase, ChevronRight, ShieldCheck, Search } from 'lucide-react-native';
 import { Card, Badge, LoadingSpinner, COLORS } from '../../src/components/ui';
 import { useAppTheme } from '../../src/hooks/useAppTheme';
 import { useBusinessStats } from '../../src/hooks/useBusinessStats';
@@ -44,8 +44,18 @@ export default function CockpitScreen() {
     <SafeAreaView style={{ flex: 1, backgroundColor: isDark ? COLORS.background.dark : COLORS.background.light }} edges={['top']}>
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 120 }} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor={COLORS.primary} />}>
         <View style={{ paddingHorizontal: 24, paddingTop: 24, paddingBottom: 16 }}>
-          <Text style={{ fontSize: 34, fontWeight: '800', color: isDark ? COLORS.text.mainDark : COLORS.text.main }}>Cockpit</Text>
-          <Text style={{ fontSize: 15, fontWeight: '500', color: COLORS.text.sub, marginTop: 4 }}>Management & Control-Center</Text>
+          <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 12 }}>
+            <View style={{ flex: 1 }}>
+              <Text style={{ fontSize: 34, fontWeight: '800', color: isDark ? COLORS.text.mainDark : COLORS.text.main }}>Cockpit</Text>
+              <Text style={{ fontSize: 15, fontWeight: '500', color: COLORS.text.sub, marginTop: 4 }}>Management & Control-Center</Text>
+            </View>
+            <TouchableOpacity
+              onPress={() => navigateTo('/suche')}
+              style={{ width: 46, height: 46, borderRadius: 16, alignItems: 'center', justifyContent: 'center', backgroundColor: isDark ? COLORS.card.dark : COLORS.card.light }}
+            >
+              <Search size={21} color={COLORS.primary} />
+            </TouchableOpacity>
+          </View>
         </View>
 
         <View style={{ paddingHorizontal: 24, gap: 16 }}>
